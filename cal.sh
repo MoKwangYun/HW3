@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='select menu: '
-
+echo "project management in github"
 
 if [ -z "$PAR" ]; then
 	echo "...none operator parameter..."

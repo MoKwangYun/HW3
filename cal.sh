@@ -20,26 +20,28 @@ else
 
 fi
 
-v1=$(<t1.txt)
-v2=$(<t2.txt)
-echo "num1 : "$v1""
-echo "num2 : "$v2""
+array=()
+array[0]=$(<t1.txt)
+array[1]=$(<t2.txt)
+echo "num1 : "${array[0]}""
+echo "num2 : "${array[1]}""
+
 echo "op : "$PAR""
 
 if [ $PAR == "add" ]; then
-	result=$(($v1 + $v2))
+	result=$((array[0] + array[1]))
 	echo "result : "$result""
 
 elif [ $PAR == "sub" ]; then
-	result=$(($v1 - $v2))
+	result=$((array[0] - array[1]))
 	echo "result : "$result""
 
 elif [ $PAR == "div" ]; then
-	result=$(($v1 / $v2))
+	result=$((array[0] / array[1]))
 	echo "result : "$result""
 
 elif [ $PAR == "mul" ]; then
-	result=$(($v1 * $v2))
+	result=$((array[0] * array[1]))
 	echo "result : "$result""
 
 
